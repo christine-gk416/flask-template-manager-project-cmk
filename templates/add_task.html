@@ -6,6 +6,20 @@
 
 <div class="row">
     <form class="col s12 card-panel grey lighten-5">
+
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="fas fa-folder-open prefix light-blue-text text-darken-4"></i>
+                <select id="category_name" name="category_name" class="validate" required>
+                    <option value="" disabled selected>Choose Category</option>
+                    {% for category in categories %}
+                        <option value="{{ category.category_name }}">{{ category.category_name }}</option>
+                    {% endfor %}
+                </select>
+                <label for="category_name">Task Category</label>
+            </div>
+        </div>
+
         <div class="row">
             <div class="input-field col s12">
                 <i class="fas fa-pencil-alt prefix light-blue-text text-darken-4"></i>
@@ -14,6 +28,7 @@
                 <label for="task_name">Task Name</label>
             </div>
         </div>
+
         <div class="row">
             <div class="input-field col s12">
                 <i class="fas fa-align-left prefix light-blue-text text-darken-4"></i>
@@ -22,6 +37,7 @@
                 <label for="task_description">Task Description</label>
             </div>
         </div>
+
         <div class="row">
             <div class="input-field col s12">
                 <i class="fas fa-calendar-alt prefix light-blue-text text-darken-4"></i>
@@ -29,6 +45,7 @@
                 <label for="due_date">Due Date</label>
             </div>
         </div>    
+
         <div class="row">
             <div class="input-field col s12">
                 <div class="switch">
@@ -41,9 +58,8 @@
                 </div>
             </div>
         </div>
-</div>
-
-</form>
+        
+    </form>
 </div>
 
 {% endblock %}
